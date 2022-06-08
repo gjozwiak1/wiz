@@ -1,0 +1,64 @@
+body {
+  background-color: lightgrey;
+  margin:0;
+  padding:0;
+}
+
+.Heading {
+    text-align: center;
+    height: 10%;
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+
+.PowerlifterData {
+    text-align: center;
+    height: 20%;
+    width: 100%;
+}
+
+.Main {
+    height: 50%;
+    width: 100%;
+}
+
+.Squat, .Bench, .Deadlift {
+    text-align: center;
+    float: left;
+    height: 100%;
+    width: 33.33%;
+}
+
+.Form {
+    text-align: center;
+    height: 20%;
+    width: 100%;
+}
+
+.plate25, .plate20, .plate15, .plate10, .plate5, .plate025, .collar {
+    outline: 1px solid black;
+}
+.plate25 {
+  fill: red;
+}
+
+.plate20 {
+  fill: blue;
+}
+
+.plate15 {
+  fill: yellow;
+}
+
+.plate10 {
+  fill: green;
+}
+
+.plate025 {
+  fill: silver;
+}
+
+.collar {
+    fill:silver;
+}

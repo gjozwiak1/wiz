@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/styles/styles.css">
+    <title>IPF Raw results</title>
+</head>
+<body>
+    <div class="Heading">
+        <h1>IPF Raw results</h1>
+    </div>
+    <div class="PowerlifterData">
+            <p>Name: {{ name }}</p>
+            <p>Age: {{ age }}</p>
+        <p>Total: {{ total }} kg</p>
+    </div>
+    <div class="Main">
+        <div class="Squat">
+            <h2>Squat</h2>
+            <p>{{ squat }} kg</p>
+            <div class="svg">
+                {{ svgsq }}
+            </div>
+        </div>
+        <div class="Bench">
+            <h2>Bench Press</h2>
+            <p>{{ bench }} kg</p>
+            <div class="svg">
+                {{ svgbp }}
+            </div>
+        </div>
+        <div class="Deadlift">
+            <h2>Deadlift</h2>
+            <p>{{ deadlift }} kg</p>
+            <div class="svg">
+                {{ svgdl }}
+            </div>
+        </div>
+    </div>
+    <div class="Form">
+        <div class="range-slider">
+            <form id="myform" action="/result" method="post">
+                <input type="radio" name="sex" id="Male" value="M" checked/>Male
+                <input type="radio" name="sex" id="Female" value="F"/>Female
+
+                <br>Bodyweight: <span id="rs-bullet" class="rs-label">100</span> kg<br>
+                <script>
+                    function fun(){
+                        return document.getElementById("valueToSocietyScore").value;
+                    }
+                </script>
+                <input type="range" name="bodyweight" id="bodyweight" value="120" min="40" max="200" onchange="fun(this.value)">
+                <script>
+                    var rangeSlider = document.getElementById("bodyweight");
+                    var rangeBullet = document.getElementById("rs-bullet");
+                    rangeSlider.addEventListener("input", showSliderValue, false);
+                    function showSliderValue() {
+                        rangeBullet.innerHTML = rangeSlider.value;
+                        var bulletPosition = (rangeSlider.value /rangeSlider.max);
+                        rangeBullet.style.left = (bulletPosition * 578) + "px";
+                    }
+                </script><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
